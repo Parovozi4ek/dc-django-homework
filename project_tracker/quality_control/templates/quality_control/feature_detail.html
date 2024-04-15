@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>{{ featurerequest.title }}</h1>
+    <p>{{ featurerequest.description }}</p>
+    <p>Статус: {{ featurerequest.status }}</p>
+    <p>Приоритет: {{ featurerequest.priority }}</p>
+    <p>Проект: <a href="{% url 'tasks:project_detail' featurerequest.project.id %}">{{ featurerequest.project.name }}</a></p>
+    <p>Задача: <a href="{% url 'tasks:task_detail' featurerequest.project.id featurerequest.task.id %}">{{ featurerequest.task.name }}</a></p>
+{% endblock %}
